@@ -6,8 +6,8 @@
   - name: Backup Config
     fortios_config:
 #      host: "{{ansible_host}}"
-#      username: remote-admin
-#      password: superS3cr3tpassword
+      username: {{user_name}}
+      password: {{password_name}}
       backup: yes
       backup_path: /backup/soc/
       backup_filename: fg_config.bak
