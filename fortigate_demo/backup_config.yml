@@ -7,4 +7,4 @@
   - name: Backup Fortigate Config
     include_role:
       name: backup_config
-      vars_from: "password.yml"
+#      vars_from: "password.yml"
