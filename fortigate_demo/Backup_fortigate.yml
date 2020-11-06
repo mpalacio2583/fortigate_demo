@@ -5,7 +5,7 @@
   tasks:
   - name: Backup Config
     fortios_config:
-#      host: "{{ansible_host}}"
+      host: "{{ansible_host}}"
       username: "{{user_name}}"
       password: "{{password_name}}"
       backup: yes
