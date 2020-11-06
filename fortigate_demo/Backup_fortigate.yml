@@ -1,0 +1,13 @@
+- name: backup Fortigate
+  connection: local
+  hosts: fortigate
+  
+  tasks:
+  - name: Backup Config
+    fortios_config:
+#      host: "{{ansible_host}}"
+#      username: remote-admin
+#      password: superS3cr3tpassword
+      backup: yes
+      backup_path: /backup/soc/
+      backup_filename: fg_config.bak
