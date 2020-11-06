@@ -6,4 +6,5 @@
     password: "{{ fortinet_password }}"
     backup: yes
     backup_filename: backup_firewall_config
-    backup_path: /tmp/fortigate_backup
+#    backup_path: /tmp/fortigate_backup
+    backup_path: /backup/soc/{{inventory_hostname}}.txt
