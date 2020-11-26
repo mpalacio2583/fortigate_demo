@@ -1,6 +1,9 @@
 - name: backup Fortigate
   connection: local
   hosts: fortinet
+  collections:
+     - fortinet.fortios
+  connection: httpapi
   
   tasks:
   - name: Backup Config
