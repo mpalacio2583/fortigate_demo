@@ -1,22 +1,23 @@
+---
 - hosts: localhost
   vars:
-   host: "192.168.1.100"
-   username: "admin"
-   password: "Darios0909"
+    host: "192.168.1.100"
+    username: "admin"
+    password: "Darios0909"
    # If 'vdom' scope specified, the name of the vdom to backup configuration.
-   vdom: "vdomname"
+    vdom: "vdomname"
   tasks:
   - name: backup system config
     fortiosconfig:
-     config: "system config backup"
-     action: "backup"
-     host:  "{{ host }}"
-     username: "{{ username }}"
-     password: "{{ password }}"
-     vdom:  "{{ vdom }}"
-     https: False
-     ssl_verify: False
-     config_parameters:
-      filename: "backup_config_001"
-      # Specify global or vdom only backup ["global" | "vdom"].
-      scope: "global"
+      config: "system config backup"
+      action: "backup"
+      host:  "{{ host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      vdom:  "{{ vdom }}"
+      https: False
+      ssl_verify: False
+      config_parameters:
+        filename: "backup_config_001"
+        # Specify global or vdom only backup ["global" | "vdom"].
+        scope: "global"
