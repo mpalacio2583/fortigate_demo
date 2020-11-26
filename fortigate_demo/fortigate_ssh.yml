@@ -1,19 +1,20 @@
+---
 - hosts: localhost
 #  strategy: debug
   vars:
-   host: "192.168.1.100"
-   username: "admin"
-   password: "Darios0909"
-   vdom: "root"
+    host: "192.168.1.100"
+    username: "admin"
+    password: "Darios0909"
+    vdom: "root"
   tasks:
   - name: pass cli cmd ssh
     fortiosconfig:
-     action: "ssh"
-     host:  "{{  host }}"  
-     username: "{{  username}}"  
-     password: "{{ password }}"
-     https: False
-     ssl_verify: False
-     commands: |
-               execute update-now
-               get system status
+      action: "ssh"
+      host:  "{{  host }}"  
+      username: "{{  username}}"  
+      password: "{{ password }}"
+      https: False
+      ssl_verify: False
+    commands: |
+              execute update-now
+              get system status
