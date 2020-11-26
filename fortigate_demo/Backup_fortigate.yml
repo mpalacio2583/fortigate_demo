@@ -23,7 +23,7 @@
       password: "{{password_name}}"
       vdom: "{{ vdom }}"      
       backup: yes
-      https: False
+#      https: False
       ssl_verify: False
 #      scope: "global" or "vdom"      
       backup_path: /backup/soc/
