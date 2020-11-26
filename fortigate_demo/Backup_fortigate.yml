@@ -15,17 +15,31 @@
 #      backup_path: /backup/soc/  # バックアップ先ディレクトリ
 #      backup: yes  # バックアップする指定
 
-  tasks:
-  - name: Backup Config
+#  tasks:
+#  - name: Backup Config
 #    fortios_config:
-    fortios_system_config_backup_restore:
-    host: "{{ansible_host}}"
-    username: "{{user_name}}"
-    password: "{{password_name}}"
-    vdom: "{{ vdom }}"      
-    backup: yes
+#    fortios_system_config_backup_restore:
+#    host: "{{ansible_host}}"
+#    username: "{{user_name}}"
+#    password: "{{password_name}}"
+#    vdom: "{{ vdom }}"      
+#    backup: yes
 #      https: False
 #      ssl_verify: False
 #      scope: "global" or "vdom"      
-    backup_path: /backup/soc/
+#    backup_path: /backup/soc/
 #      backup_filename: fg_config.bak
+
+  tasks:
+  - name: backup global or a_specific_vdom settings
+    fortios_system_config_backup_restore:
+      config: "system config backup"
+      backup: "yes"
+      https: True
+      ssl_verify: False
+      scope: "{{ vdom }}"
+      filename: "/backup/soc/"
+    register: config
+
+  - debug:
+      msg: "{{ config }}
