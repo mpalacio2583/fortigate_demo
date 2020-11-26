@@ -8,7 +8,7 @@
     vdom: "root"
   tasks:
   - name: pass cli cmd ssh
-    fortiosconfig:
+    fortios_config:
       action: "ssh"
       host:  "{{  host }}"  
       username: "{{  username}}"  
