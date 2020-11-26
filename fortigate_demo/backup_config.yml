@@ -2,7 +2,7 @@
 - name: Fortinet Firewall
 #  hosts: localhost
   hosts: fortinet
-  connection: local
+#  connection: local
   gather_facts: true
 
   tasks:
