@@ -31,8 +31,8 @@
 
   tasks:
   - name: backup global or a_specific_vdom settings
-#    fortios_system_config_backup_restore:
-    fortios_config:      
+    fortios_system_config_backup_restore:
+#    fortios_config:      
       config: "system config backup"
       backup: "yes"
       https: True
