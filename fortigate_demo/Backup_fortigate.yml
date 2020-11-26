@@ -5,15 +5,15 @@
      - fortinet.fortios
   connection: httpapi
 
-#  tasks:
-#  - name: Backup current config
-#    fortios_config:
-#      host: "{{ ansible_host }}"
-#      username: "{{ user_name }}"
-#      password: "{{ password_name }}"
+  tasks:
+  - name: Backup current config
+    fortios_config:
+      host: "{{ ansible_host }}"
+      username: "{{ user_name }}"
+      password: "{{ password_name }}"
 #      vdom: "{{ vdom }}"
-#      backup_path: /backup/soc/  # バックアップ先ディレクトリ
-#      backup: yes  # バックアップする指定
+      backup_path: /backup/soc/  # バックアップ先ディレクトリ
+      backup: yes  # バックアップする指定
 #  tasks:
 #  - name: Backup Config
 #    fortios_config:
@@ -29,17 +29,17 @@
 #    backup_path: /backup/soc/
 #      backup_filename: fg_config.bak
 
-  tasks:
-  - name: backup global or a_specific_vdom settings
-    fortios_system_config_backup_restore:
+#  tasks:
+#  - name: backup global or a_specific_vdom settings
+#    fortios_system_config_backup_restore:
 #    fortios_config:      
-      config: "system config backup"
-      backup: "yes"
-      https: True
-      ssl_verify: False
-      scope: "{{ vdom }}"
-      filename: "/backup/soc/"
-    register: config
+#      config: "system config backup"
+#      backup: "yes"
+#      https: True
+#      ssl_verify: False
+#      scope: "{{ vdom }}"
+#      filename: "/backup/soc/"
+#    register: config
 
-  - debug:
-      msg: "{{ config }}"
+#  - debug:
+#      msg: "{{ config }}"
