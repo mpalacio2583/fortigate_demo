@@ -17,7 +17,8 @@
 
   tasks:
   - name: Backup Config
-    fortios_config:
+#    fortios_config:
+    fortios_system_config_backup_restore:
       host: "{{ansible_host}}"
       username: "{{user_name}}"
       password: "{{password_name}}"
