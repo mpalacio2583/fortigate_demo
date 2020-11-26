@@ -25,6 +25,6 @@
       backup: yes
       https: True
       ssl_verify: False
-      scope: "global" or "vdom"      
+#      scope: "global" or "vdom"      
       backup_path: /backup/soc/
 #      backup_filename: fg_config.bak
