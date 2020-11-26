@@ -19,13 +19,13 @@
   - name: Backup Config
 #    fortios_config:
     fortios_system_config_backup_restore:
-      host: "{{ansible_host}}"
-      username: "{{user_name}}"
-      password: "{{password_name}}"
-      vdom: "{{ vdom }}"      
-      backup: yes
+    host: "{{ansible_host}}"
+    username: "{{user_name}}"
+    password: "{{password_name}}"
+    vdom: "{{ vdom }}"      
+    backup: yes
 #      https: False
 #      ssl_verify: False
 #      scope: "global" or "vdom"      
-      backup_path: /backup/soc/
+    backup_path: /backup/soc/
 #      backup_filename: fg_config.bak
