@@ -5,7 +5,7 @@
     username: "admin"
     password: "Darios0909"
    # If 'vdom' scope specified, the name of the vdom to backup configuration.
-    vdom: "vdomname"
+    vdom: "root"
   tasks:
   - name: backup system config
     fortiosconfig:
