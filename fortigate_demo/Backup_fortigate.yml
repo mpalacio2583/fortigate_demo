@@ -4,13 +4,22 @@
   collections:
      - fortinet.fortios
   connection: httpapi
-  
+
   tasks:
-  - name: Backup Config
+  - name: Backup current config
     fortios_config:
-      host: "{{ansible_host}}"
-      username: "{{user_name}}"
-      password: "{{password_name}}"
-      backup: yes
-      backup_path: /backup/soc/
-      backup_filename: fg_config.bak
+      host: "{{ ansible_host }}"
+      username: "{{ user_name }}"
+      password: "{{ password_name }}"
+      backup_path: /backup/soc/  # バックアップ先ディレクトリ
+      backup: yes  # バックアップする指定
+
+#  tasks:
+#  - name: Backup Config
+#    fortios_config:
+#      host: "{{ansible_host}}"
+#      username: "{{user_name}}"
+#      password: "{{password_name}}"
+#      backup: yes
+#      backup_path: /backup/soc/
+#      backup_filename: fg_config.bak
