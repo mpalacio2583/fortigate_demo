@@ -10,7 +10,7 @@
 
   tasks:
     - name: BACKUP THE CONFIG
-      cli_command:
+      fortios_config:
         command: show full-configuration
 #          - show full-configuration
       register: config
