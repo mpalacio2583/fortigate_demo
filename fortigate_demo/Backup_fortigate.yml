@@ -24,7 +24,7 @@
       vdom: "{{ vdom }}"      
       backup: yes
 #      https: False
-      ssl_verify: False
+#      ssl_verify: False
 #      scope: "global" or "vdom"      
       backup_path: /backup/soc/
 #      backup_filename: fg_config.bak
