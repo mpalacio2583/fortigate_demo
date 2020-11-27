@@ -13,8 +13,8 @@
       username: "{{ user_name }}"
       password: "{{ password_name }}"
       vdom: "{{ vdom_name }}"
-      backup: yes  # バックアップする指定
       timeout: 300
+      backup: yes  # バックアップする指定
       backup_path: /backup/soc/  # バックアップ先ディレクトリ
 #        backup_filename: fg_config.bak
 
