@@ -7,7 +7,7 @@
       uri:
         url: 'https://{{ ansible_host }}/api/v2/monitor/system/config/backup/?scope=global&access_token={{ access_token }}'
         return_content: yes
-        validate_certs: no
+        validate_certs: yes
       register: current_config
 
     - name: write config to local file
