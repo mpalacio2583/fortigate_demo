@@ -6,16 +6,26 @@
 #  connection: httpapi
 
   tasks:
-  - name: Backup current config
-    connection: local    
-    fortios_config:
-      host: "{{ ansible_host }}"
-      username: "{{ user_name }}"
-      password: "{{ password_name }}"
-      vdom: "{{ vdom_name }}"
-      timeout: 300
-      backup: yes  # バックアップする指定
-      backup_path: /backup/soc/  # バックアップ先ディレクトリ
+  - name: configurable backup path
+    netconf_config:
+      backup: yes
+      backup_options:
+        filename: backup.cfg
+        dir_path: /backup/soc
+
+
+
+#  tasks:
+#  - name: Backup current config
+#    connection: local    
+#    fortios_config:
+#      host: "{{ ansible_host }}"
+#      username: "{{ user_name }}"
+#      password: "{{ password_name }}"
+#      vdom: "{{ vdom_name }}"
+#      timeout: 300
+#      backup: yes  # バックアップする指定
+#      backup_path: /backup/soc/  # バックアップ先ディレクトリ
 #        backup_filename: fg_config.bak
 
 #  tasks:
