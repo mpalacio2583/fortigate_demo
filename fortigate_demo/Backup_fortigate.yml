@@ -11,10 +11,11 @@
       host: "{{ ansible_host }}"
       username: "{{ user_name }}"
       password: "{{ password_name }}"
-      timeout: 300
       vdom: "{{ vdom_name }}"
-      backup_path: /backup/soc/  # バックアップ先ディレクトリ
       backup: yes  # バックアップする指定
+      timeout: 300
+      backup_path: /backup/soc/  # バックアップ先ディレクトリ
+        backup_filename: fg_config.bak
 #  tasks:
 #  - name: Backup Config
 #    fortios_config:
