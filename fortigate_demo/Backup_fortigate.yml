@@ -7,6 +7,7 @@
 
   tasks:
   - name: Backup current config
+    connection: local    
     fortios_config:
       host: "{{ ansible_host }}"
       username: "{{ user_name }}"
@@ -15,7 +16,8 @@
       backup: yes  # バックアップする指定
       timeout: 300
       backup_path: /backup/soc/  # バックアップ先ディレクトリ
-        backup_filename: fg_config.bak
+#        backup_filename: fg_config.bak
+
 #  tasks:
 #  - name: Backup Config
 #    fortios_config:
