@@ -1,8 +1,8 @@
 ---
 - name: BACKUP FORTINET CONFIGURATIONS
-  hosts: localhost
-#  hosts: all
-#  connection: local
+#  hosts: localhost
+  hosts: fortinet
+  connection: local
   gather_facts: false
 
   vars:
