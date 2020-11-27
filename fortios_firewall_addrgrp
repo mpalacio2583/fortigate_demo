@@ -1,0 +1,24 @@
+- hosts: localhost
+  vars:
+   host: "192.168.1.100"
+   username: "admin"
+   password: "Darios0909"
+   vdom: "root"
+  tasks:
+  - name: Configure IPv4 address groups.
+    fortios_firewall_addrgrp:
+      host:  "{{ host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      vdom:  "{{ vdom }}"
+      https: "False"
+      firewall_addrgrp:
+        state: "present"
+        allow-routing: "enable"
+        color: "4"
+        comment: "Comment."
+        member:
+         - name: "all"
+         - name: "google-play"
+        name: "source_group_a"
+        visibility: "enable"
