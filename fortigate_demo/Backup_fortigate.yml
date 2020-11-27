@@ -1,9 +1,9 @@
 - name: backup Fortigate
   connection: local
   hosts: fortinet
-  collections:
-     - fortinet.fortios
-  connection: httpapi
+#  collections:
+#     - fortinet.fortios
+#  connection: httpapi
 
   tasks:
   - name: Backup current config
@@ -11,6 +11,7 @@
       host: "{{ ansible_host }}"
       username: "{{ user_name }}"
       password: "{{ password_name }}"
+      timeout: 300
       vdom: "{{ vdom_name }}"
       backup_path: /backup/soc/  # バックアップ先ディレクトリ
       backup: yes  # バックアップする指定
