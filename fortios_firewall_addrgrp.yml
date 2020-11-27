@@ -1,4 +1,6 @@
-- hosts: localhost
+- name: backup Fortigate
+  connection: local
+  hosts: fortinet
   vars:
    host: "192.168.1.100"
    username: "admin"
