@@ -1,6 +1,6 @@
 - name: fortigate config backup
   connection: local
-  hosts: fortigate
+  hosts: fortinet
 
   tasks:
     - name: get current config
