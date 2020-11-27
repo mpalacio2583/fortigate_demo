@@ -11,7 +11,7 @@
       host: "{{ ansible_host }}"
       username: "{{ user_name }}"
       password: "{{ password_name }}"
-#      vdom: "{{ vdom }}"
+      vdom: "{{ vdom_name }}"
       backup_path: /backup/soc/  # バックアップ先ディレクトリ
       backup: yes  # バックアップする指定
 #  tasks:
