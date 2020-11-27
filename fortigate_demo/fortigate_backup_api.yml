@@ -1,15 +1,22 @@
-- name: fortigate config backup
-  connection: local
-  hosts: fortinet
-
+- hosts: localhost
+  vars:
+   host: "192.168.1.100"
+   username: "admin"
+   password: "Darios0909"
+   # If 'vdom' scope specified, the name of the vdom to backup configuration.
+   vdom: "root"
   tasks:
-    - name: get current config
-      uri:
-        url: 'https://{{ ansible_host }}/api/v2/monitor/system/config/backup/?scope=global&access_token={{ access_token }}'
-        return_content: yes
-        validate_certs: no
-      register: current_config
-
-    - name: write config to local file
-#      local_action: copy content={{ current_config.content }} dest=./{{ inventory_hostname }}_{{ ansible_date_time.date }}.txt
-      local_action: copy content={{ current_config.content }} dest= "/backup/{{ inventory_hostname }}_{{ ansible_date_time.date }}.txt"      
+  - name: backup system config
+    fortiosconfig:
+     config: "system config backup"
+     action: "backup"
+     host:  "{{ host }}"
+     username: "{{ username }}"
+     password: "{{ password }}"
+     vdom:  "{{ vdom }}"
+     https: False
+     ssl_verify: False
+     config_parameters:
+      filename: "/backup/soc/backup_config_001"
+      # Specify global or vdom only backup ["global" | "vdom"].
+      scope: "global"   
