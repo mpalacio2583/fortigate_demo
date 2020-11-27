@@ -17,4 +17,4 @@
       https: False
       ssl_verify: False
       config_parameters:
-       filename: "/backup/soc/backup_config_001"
+        filename: "/backup/soc/backup_config_001"
