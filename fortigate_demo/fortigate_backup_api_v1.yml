@@ -10,6 +10,7 @@
 #        return_content: yes
 #        validate_certs: yes
         dest: /backup/soc/{{ inventory_hostname }}_{{ ansible_date_time.date }}.txt
+        force_basic_auth: yes
 #        register: current_config
 
  #   - name: write config to local file
